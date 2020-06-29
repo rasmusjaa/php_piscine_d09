@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		#ft_list {
+			background-color: #ccc;
+			padding: 30px;
+			margin-left: 30px;
+			float: left;
+			min-width: 138px;
+			min-height: 138px;
+			width: auto;
+		}
+		.note {
+			background-color: red;
+			padding: 30px;
+			margin: 30px;
+			display: block;
+		}
+		button {
+			display: block;
+			margin: 30px;
+			padding: 30px;
+			background: white;
+			border: 1px solid black;
+		}
+		#cookie {
+			clear: both;
+			display: block;
+			margin: 30px;
+			padding-top:30px;
+		}
+	</style>
+	<script type="text/javascript" src="todo.js"></script>
+</head>
+<body>
+	<button name="new" onclick="note()">New</button>
+	<div id="ft_list" onclick="delNote(event)">	</div>
+
+	<div id="cookie">	
+		Cookies are written on page unload and added to notes on page load.<br>
+		Here you can manually write current notes to cookies and show whole cookie note array.<br><br>
+		Write current notes to cookies: <button onclick="WriteCookie()">Yes</button><br>
+		Read cookie content array to new note: <button onclick="ReadCookie()">Yes</button>
+		Expire all cookies: <button onclick="deleteAllCookies()">Yes</button>
+	</div>
+</body>
+</html>

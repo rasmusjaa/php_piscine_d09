@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		.alert {
+			background-color: red;
+			padding: 30px;
+			margin-top: 30px;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		var intervalID = window.setInterval(myCallback, 30000);
+
+		function myCallback() {
+			window.alert("Please, use me...");
+		}
+
+		function calculate() {
+			var message;
+			var one = document.getElementById("one").value;
+			var op = document.getElementById("op").value;
+			var two = document.getElementById("two").value;
+			if(one.match(/^\d+$/) && two.match(/^\d+$/))
+			{
+				one = +one;
+				two = +two;
+				switch(+op)
+				{
+					default:
+					case 1:
+						message = one + two;
+						break;
+					case 2:
+						message = one - two;
+						break;
+					case 3:
+						message = one * two;
+						break;
+					case 4:
+						if (two === 0)
+						{
+							message = "It’s over 9000!";
+							break;
+						}
+						message = one / two;
+						break;
+					case 5:
+					if (two === 0)
+						{
+							message = "It’s over 9000!";
+							break;
+						}
+						message = one % two;
+						break;
+				}	
+			}
+			else
+			{
+				message = "Error :(";
+			}
+			console.log(message);
+			window.alert(message);
+		}
+	</script>
+</head>
+<body>
+	<form id="calc">
+		Left member: <input type="text" id="one"><br><br>
+		Operator: <select id="op">
+			<option value="1">+</option>
+			<option value="2">-</option>
+			<option value="3">*</option>
+			<option value="4">/</option>
+			<option value="5">%</option>
+		  </select><br><br>
+		Right member: <input type="text" id="two"><br><br>
+		<button onclick="calculate()">Try me!</button>
+	</form>
+</body>
+</html>

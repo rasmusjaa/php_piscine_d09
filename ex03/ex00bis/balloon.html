@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		#balloon {
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var colors = ['red', 'green', 'blue'];
+		var number = 0;
+
+		$(document).ready(function(){
+			$("#balloon").click(function(){
+				var bigger = $("#balloon").width() + 10;
+				if (bigger > 420) {
+					bigger = 200;
+				}
+				$("#balloon").width(bigger).height(bigger);
+				number = number == 2 ? number = 0 : number = (number + 1);
+				$("#balloon").css({"background-color": colors[number]});
+			});
+			$("#balloon").mouseleave(function(){
+				var smaller = $("#balloon").width() - 5;
+				if (smaller < 200) {
+					smaller = 200;
+				}
+				$("#balloon").width(smaller).height(smaller);
+				number = number == 0 ? number = 2 : number = (number - 1);
+				$("#balloon").css({"background-color": colors[number]});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="balloon"></div>
+</body>
+</html>

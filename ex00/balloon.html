@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		#balloon {
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+		}
+	</style>
+	<script type="text/javascript">
+		var colors = ['red', 'green', 'blue'];
+		var number = 0;
+
+		function expand(el) {
+			var bigger = el.offsetWidth + 10;
+			if (bigger > 420) {
+				bigger = 200;
+			}
+			el.style.width = bigger + "px";
+			el.style.height = bigger + "px";
+			number = number == 2 ? number = 0 : number = (number + 1);
+			el.style.background = colors[number];
+		}
+
+		function deflate(el) {
+			var smaller = el.offsetWidth - 5;
+			if (smaller < 200) {
+				smaller = 200;
+			}
+			el.style.width = smaller + "px";
+			el.style.height = smaller + "px";
+			number = number == 0 ? number = 2 : number = (number - 1);
+			el.style.background = colors[number];
+		}
+	</script>
+</head>
+<body>
+	<div id="balloon" onclick="expand(this)" onmouseleave="deflate(this)"></div>
+</body>
+</html>
