@@ -2,20 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<style type="text/css">
-		.alert {
-			background-color: red;
-			padding: 30px;
-			margin-top: 30px;
-			display: none;
-		}
-	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		setInterval(function(){ alert("Please, use me..."); }, 30000);
-		
+
 		$(document).ready(function(){
-			$("button").click(function(){
+			$("#calc-button").click(function(){
 				var message;
 				var one = $("#one").val();
 				var op = $("#op").val();
@@ -63,7 +55,7 @@
 			<option value="5">%</option>
 		  </select><br><br>
 		Right member: <input type="text" id="two"><br><br>
-		<button id="calc">Try me!</button>
+		<button id="calc-button">Try me!</button>
 	</form>
 </body>
 </html>

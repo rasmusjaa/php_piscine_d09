@@ -22,10 +22,10 @@ $(document).ready(function() {
 	});
 
 	$('button').click(function() {
-		var doc = prompt("Please enter some text", "Note"); 
+		var doc = prompt("Please enter some text", "Note");
         if (doc && doc != '') {
 			n++;
-			$('#ft_list').prepend($("<div class='note'>" + doc + "</div>").click({param: number}, remove_task));
+			$('#ft_list').prepend($("<div class='note'>" + doc + "</div>").click({param: n}, remove_task));
 			$.ajax({
 				type: 'GET',
 				url: 'insert.php?key=' + n + '&value=' + doc
